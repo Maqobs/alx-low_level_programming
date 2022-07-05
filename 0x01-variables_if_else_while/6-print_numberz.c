@@ -1,4 +1,4 @@
-include <stdio.h>
+#include <stdio.h>
 
 /**
  *main -> assign a random number to the variable n each time it is executed
@@ -7,14 +7,14 @@ include <stdio.h>
  */
 int main(void)
 {
-	int ch;
-	for (ch = 48; ch <= 57; ch++)
-	{
+int ch;
+for (ch = 48; ch <= 57; ch++)
+{
 
-		putchar(ch);
-	}
+putchar(ch);
+}
 
-	putchar(10); /* this is an ascii code for new line*/
+putchar(10); /* this is an ascii code for new line*/
 
-	return (0);
+return (0);
 }
