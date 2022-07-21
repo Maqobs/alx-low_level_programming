@@ -1,6 +1,4 @@
-include <stdio.h>
-
-int _pow_recursion(int, int);
+void _print_rev_recursion(char *);
 
 /**
  * main - check the code for Holberton School students.
@@ -9,9 +7,6 @@ int _pow_recursion(int, int);
  */
 int main(void)
 {
-	int r;
-
-	r = _pow_recursion(9, 8);
-	printf("%d\n", r);
+	_print_rev_recursion("\nFirst, solve the problem. Then, write the code");
 	return (0);
 }
