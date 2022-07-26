@@ -29,27 +29,3 @@ char *_strdup(char *str)
 	strnew[i] = '\0';
 	return (strnew);
 }
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-1-strdup.c [unix] (01:59 01/01/1970)                                   0,0-1 All
-"1-strdup.c" [New]
-
