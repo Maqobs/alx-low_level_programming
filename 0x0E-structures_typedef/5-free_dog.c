@@ -1,11 +1,11 @@
 #include "dog.h"
 #include <stdlib.h>
+
 /**
- * free_dog - function that frees dogs.
- * @d: point to struct dog
- *
- * Return: Void
+ * free_dog - free memory of dog
+ * @d: pointer to dog
  */
+
 void free_dog(dog_t *d)
 {
 	if (d)
@@ -16,6 +16,5 @@ void free_dog(dog_t *d)
 			free(d->owner);
 		free(d);
 	}
-	else
-		free(d);
 }
+

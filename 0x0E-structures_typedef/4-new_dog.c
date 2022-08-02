@@ -1,75 +1,50 @@
 #include "dog.h"
 #include <stdlib.h>
+#include <stdio.h>
+
 /**
- * _strcpy - function that copies the string pointed to
- * @dest: pointer to string entry data
- * @src: destiny data
- * Return: return value of dest
+ * new_dog - new dog
+ * @name: name's dog
+ * @age: age's dog
+ * @owner: owner's dog
+ * Return: newdog
  */
 
-void *_strcpy(char *dest, char *src)
-{
-	int i = 0;
-
-	if (src != '\0')
-	{
-		for (i = 0;  *(src + i) != '\0'; i++)
-		{
-			*(dest + i) = *(src + i);
-		}
-	}
-
-	*(dest + i) = '\0';
-	return (dest);
-}
-/**
- * _strlen - returns the length of a string.
- * @s: pointer to String
- * Return: Nothing
- */
-unsigned int _strlen(char *s)
-{
-	unsigned int i = 0;
-
-	while (*(s + i) != '\0')
-	{
-		i++;
-	}
-
-	return (i);
-}
-/**
- * new_dog - function that creates a new dog
- * @name: name to create a new struct
- * @age: age to create a new struct
- * @owner: owner to create a new struct
- *
- * Return: dog struct
- */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *n_dog;
 
-	n_dog =  malloc(sizeof(dog_t));
-	if (n_dog)
+	int i = 0, j = 0, k;
+	dog_t *doge;
+
+	while (name[i] != '\0')
+		i++;
+	while (owner[j] != '\0')
+		j++;
+	doge = malloc(sizeof(dog_t));
+	if (doge == NULL)
 	{
-		n_dog->name = malloc((_strlen(name) + 1) * sizeof(char));
-		if (n_dog->name)
-		{
-			n_dog->owner = malloc((_strlen(owner) + 1) * sizeof(char));
-			if (n_dog->owner)
-			{
-				_strcpy(n_dog->name, name);
-				_strcpy(n_dog->owner, owner);
-				n_dog->age = age;
-				return (n_dog);
-			}
-			else
-				free(n_dog->name);
-				free(n_dog);
-		}
-		else
-			free(n_dog);
+		free(doge);
+		return (NULL);
 	}
-	return (NULL);
+	doge->name = malloc(i * sizeof(doge->name));
+	if (doge->name == NULL)
+	{
+		free(doge->name);
+		free(doge);
+		return (NULL);
+	}
+	for (k = 0; k <= i; k++)
+		doge->name[k] = name[k];
+	doge->age = age;
+	doge->owner = malloc(j * sizeof(doge->owner));
+	if (doge->owner == NULL)
+	{
+		free(doge->owner);
+		free(doge->name);
+		free(doge);
+		return (NULL);
+	}
+	for (k = 0; k <= j; k++)
+		doge->owner[k] = owner[k];
+	return (doge);
 }
