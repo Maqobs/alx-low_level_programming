@@ -1,0 +1,3 @@
+user defined data types that allows us to combine data items of different kinds.
+
+dog.h - changing structure of dog to these...
