@@ -1,21 +1,21 @@
-nes (18 sloc)  255 Bytes
-/*
- * File: 5-free_dog.c
- */
-
 #include "dog.h"
 #include <stdlib.h>
-
 /**
- * free_dog - Frees dogs.
- * @d: The dog to be freed.
+ * free_dog - function that frees dogs.
+ * @d: point to struct dog
+ *
+ * Return: Void
  */
 void free_dog(dog_t *d)
 {
-	if (d == NULL)
-		return;
-
-	free(d->owner);
-	free(d->name);
-	free(d);
+	if (d)
+	{
+		if (d->name)
+			free(d->name);
+		if (d->owner)
+			free(d->owner);
+		free(d);
+	}
+	else
+		free(d);
 }
